@@ -19,7 +19,7 @@ public class SearchEngineTester {
 
 
         //This tester uses the command line. That's why the args are passed to the method
-        wct.providedTester(args);
+        wct.providedTester();
 
 
         /** TODO: Add other unit test method calls here */
@@ -45,7 +45,7 @@ public class SearchEngineTester {
      *
      *  You are free to change the messages that the user receives! This is just an example.
      */
-    public static void providedTester(String[] args) throws IOException {
+    public static void providedTester() throws IOException {
 
         Scanner scan =  new Scanner(System.in);
 
@@ -70,7 +70,7 @@ public class SearchEngineTester {
 
 
         // #4 filter by length or not
-        System.out.println("Would you like looking for length of words or words starting with a certain letter?");
+        System.out.println("Would you like looking for length of words or words starting with a certain letter? (length/start)");
         String lengthOrLetter = scan.next();
         boolean filterByLength = (lengthOrLetter.toLowerCase().charAt(0) == 'l') ? true : false;
         int lengthValue = 0;
@@ -78,8 +78,10 @@ public class SearchEngineTester {
 
         // #5 find letter or length
         if (filterByLength) {
+            System.out.println("Whant length?");
             lengthValue = scan.nextInt();
         } else {
+            System.out.println("Whant letter?");
             charValue = scan.next().charAt(0);
         }
 
